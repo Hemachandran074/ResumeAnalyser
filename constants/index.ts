@@ -1,3 +1,6 @@
+// Maximum file size for resume uploads (5MB)
+export const maxFileSize = 5 * 1024 * 1024; // 5MB in bytes
+
 export const resumes: Resume[] = [
   {
     id: "1",
