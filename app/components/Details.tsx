@@ -4,7 +4,7 @@ import {
   AccordionContent,
   AccordionHeader,
   AccordionItem,
-} from "./Accordion";
+} from "~/components/Accordion";
 
 const ScoreBadge = ({ score }: { score: number }) => {
   return (

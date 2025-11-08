@@ -34,17 +34,8 @@ export default function Home() {
       setResumes(parsedResumes ?? []);
       setLoadingResumes(false);
     }
-  })
-
-  useEffect(() => {
-    const loadResume = async () => {
-      const blob = await fs.read("/welcome.pdf");
-      if(!blob) return;
-      let url = URL.createObjectURL(blob);
-      setResumes(url);
-    }
-    loadResume();
-  }, [resume.imagePath]);
+    loadResumes();
+  }, [kv]);
 
   return <main className="bg-[url('/images/bg-main.svg')] bg-cover">
     <Navbar />

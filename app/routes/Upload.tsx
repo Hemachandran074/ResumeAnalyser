@@ -7,7 +7,7 @@ import { usePuterStore } from '~/lib/puter';
 import { useNavigate } from 'react-router';
 import { convertPdfToImage } from '~/lib/pdfToImage';
 import { generateUUID } from '~/lib/utils';
-import { prepareInstructions } from '~/lib/constants';
+import { prepareInstructions, AIResponseFormat } from '../../constants';
 
 const Upload = () => {
     const { auth, isLoading, fs, ai, kv} = usePuterStore();
@@ -50,7 +50,7 @@ const Upload = () => {
 
         const feedback = await ai.feedback(
             uploadedFile.path,
-            prepareInstructions({ jobTitle, jobDescription })
+            prepareInstructions({ jobTitle, jobDescription, AIResponseFormat })
         )
         if(!feedback) setStatusText('Error: Failed to analyze resume');
 
@@ -116,7 +116,7 @@ const Upload = () => {
                             Analyze Resume
                         </button>
                     </form>
-                ) : ()
+                ) : null
                 }
             </div>
         </section>

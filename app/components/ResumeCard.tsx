@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router'
 import ScoreCircle from './ScoreCircle'
-import type { Resume } from '~/lib/types';
 import { useEffect, useState } from 'react';
 import { usePuterStore } from '~/lib/puter';
 
