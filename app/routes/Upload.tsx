@@ -7,7 +7,7 @@ import { usePuterStore } from '~/lib/puter';
 import { useNavigate } from 'react-router';
 import { convertPdfToImage } from '~/lib/pdfToImage';
 import { generateUUID } from '~/lib/utils';
-import { prepareInstructions } from 'constants';
+import { prepareInstructions } from '~/lib/constants';
 
 const Upload = () => {
     const { auth, isLoading, fs, ai, kv} = usePuterStore();
@@ -46,7 +46,7 @@ const Upload = () => {
             feedback: '',
         }
         await kv.set(`resume:${uuid}`, JSON.stringify(data));
-        setStatusText('ANalyzing...'),
+        setStatusText('ANalyzing...');
 
         const feedback = await ai.feedback(
             uploadedFile.path,
